@@ -1,0 +1,16 @@
+.detail {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+
+  img {
+    width: 300px;
+    border-radius: 10px;
+  }
+
+  .info {
+    h1 {
+      margin: 0 0 10px 0;
+    }
+  }
+}

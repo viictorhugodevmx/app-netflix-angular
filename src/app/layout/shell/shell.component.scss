@@ -31,3 +31,21 @@
 .content {
   padding: 20px;
 }
+
+.auth-buttons {
+  display: flex;
+  gap: 8px;
+
+  button {
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    background: #e50914;
+    color: white;
+    border-radius: 4px;
+  }
+}
+
+.nav a.active {
+  border-bottom: 2px solid #e50914;
+}

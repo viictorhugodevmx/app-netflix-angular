@@ -1,2 +1,73 @@
-<h1>Home</h1>
-<p>Landing tipo Netflix</p>
+<section class="hero" [style.backgroundImage]="'url(' + hero.cover + ')'">
+  <div class="overlay">
+    <h1>{{ hero.title }}</h1>
+    <p>{{ hero.year }} • Rating {{ hero.rating }}</p>
+
+    <div class="hero-actions">
+      <button class="btn primary">Play</button>
+      <button class="btn">More Info</button>
+    </div>
+  </div>
+</section>
+
+<section class="rows">
+  <div class="row">
+    <h2>Trending</h2>
+    <div class="row-list">
+      @for (movie of getByCategory('Trending'); track movie.id) {
+        <div class="card" [routerLink]="['/movie', movie.id]">
+          <img [src]="movie.cover" [alt]="movie.title" />
+          <div class="meta">
+            <div class="title">{{ movie.title }}</div>
+            <div class="sub">{{ movie.year }} • {{ movie.rating }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="row">
+    <h2>Top Rated</h2>
+    <div class="row-list">
+      @for (movie of getByCategory('Top Rated'); track movie.id) {
+        <div class="card" [routerLink]="['/movie', movie.id]">
+          <img [src]="movie.cover" [alt]="movie.title" />
+          <div class="meta">
+            <div class="title">{{ movie.title }}</div>
+            <div class="sub">{{ movie.year }} • {{ movie.rating }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="row">
+    <h2>Action</h2>
+    <div class="row-list">
+      @for (movie of getByCategory('Action'); track movie.id) {
+        <div class="card" [routerLink]="['/movie', movie.id]">
+          <img [src]="movie.cover" [alt]="movie.title" />
+          <div class="meta">
+            <div class="title">{{ movie.title }}</div>
+            <div class="sub">{{ movie.year }} • {{ movie.rating }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="row">
+    <h2>Comedy</h2>
+    <div class="row-list">
+      @for (movie of getByCategory('Comedy'); track movie.id) {
+        <div class="card" [routerLink]="['/movie', movie.id]">
+          <img [src]="movie.cover" [alt]="movie.title" />
+          <div class="meta">
+            <div class="title">{{ movie.title }}</div>
+            <div class="sub">{{ movie.year }} • {{ movie.rating }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

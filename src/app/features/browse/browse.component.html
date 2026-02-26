@@ -1,2 +1,28 @@
-<h1>Browse</h1>
-<p>Catálogo fake</p>
+<section class="browse-header">
+  <input
+    #searchInput
+    type="text"
+    placeholder="Search movies..."
+    (input)="onSearch(searchInput.value)"
+  />
+
+  <div class="filters">
+    <button (click)="setCategory('All')">All</button>
+    <button (click)="setCategory('Trending')">Trending</button>
+    <button (click)="setCategory('Top Rated')">Top Rated</button>
+    <button (click)="setCategory('Action')">Action</button>
+    <button (click)="setCategory('Comedy')">Comedy</button>
+  </div>
+</section>
+
+<section class="grid">
+  @for (movie of filtered; track movie.id) {
+    <div class="card">
+      <img [src]="movie.cover" [alt]="movie.title" />
+      <div class="meta">
+        <div class="title">{{ movie.title }}</div>
+        <div class="sub">{{ movie.year }} • {{ movie.rating }}</div>
+      </div>
+    </div>
+  }
+</section>
